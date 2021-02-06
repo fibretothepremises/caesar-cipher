@@ -4,11 +4,11 @@ def caesar_cipher(string, shift_num)
   string_array = []
   string.each_char do |c|
     if lowercase.include?(c)
-      new_index = (lowercase.index(c) + shift_num) % 26
-      string_array.push(lowercase[new_index])
+      shifted_index = (lowercase.index(c) + shift_num) % 26
+      string_array.push(lowercase[shifted_index])
     elsif uppercase.include?(c)
-      new_index = (uppercase.index(c) + shift_num) % 26
-      string_array.push(uppercase[new_index])
+      shifted_index = (uppercase.index(c) + shift_num) % 26
+      string_array.push(uppercase[shifted_index])
     else
       string_array.push(c)
     end
