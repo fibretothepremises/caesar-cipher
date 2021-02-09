@@ -1,20 +1,20 @@
 def caesar_cipher(string, shift_num)
   lowercase = ("a".."z").to_a
   uppercase = ("A".."Z").to_a
-  string_array = []
-  string.each_char do |c|
+  array = string.split("")
+  ciphered_array = array.map do |c|
     if lowercase.include?(c)
       shifted_index = (lowercase.index(c) + shift_num) % 26
-      string_array.push(lowercase[shifted_index])
+      lowercase[shifted_index]
     elsif uppercase.include?(c)
       shifted_index = (uppercase.index(c) + shift_num) % 26
-      string_array.push(uppercase[shifted_index])
+      uppercase[shifted_index]
     else
-      string_array.push(c)
+      c
     end
   end
-  new_string = string_array.join("")
-  p new_string
+  ciphered_string = ciphered_array.join("")
+  p ciphered_string
 end
 
 caesar_cipher("What a string!", 5)
